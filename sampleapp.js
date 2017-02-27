@@ -3,7 +3,8 @@ var fs = require('fs');
 
 var server = http.createServer();
 server.on('request', doRequest);
-server.listen(process.env.PORT, process.env.IP);
+// server.listen(process.env.PORT, process.env.IP);
+server.listen(1234);
 console.log('Server running!');
 
 function doRequest(req,res) {
@@ -14,11 +15,11 @@ function doRequest(req,res) {
             var content = ["※これはサンプルで作ったものです。",
                 "もう一つのコンテンツです。",
                 "最後に用意したコンテンツですよ。"];
-            var data2 = data.
+            var data2 = date.
                 replace(/@title@/g, title[number]).
                 replace(/@content@/g, content[number]);
             res.writeHead(200, {'Content-Type': 'text/html'});
-            res.write(date);
+            res.write(data2);
             res.end();
         }
     );
