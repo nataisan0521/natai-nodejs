@@ -3,7 +3,7 @@ var fs = require('fs');
 
 var server = http.createServer();
 server.on('request', doRequest);
-server.listen(1234);
+server.listen(process.env.PORT, process.env.IP);
 console.log('Server running!');
 
 function doRequest(req,res) {
